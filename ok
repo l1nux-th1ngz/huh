@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Make Git Dir
+mkdir Git
+
+# Change into Git dir
+cd Git
+
+# Clone repositories
+git clone https://github.com/arzzen/calc.plugin.zsh.git
+git clone https://github.com/arzzen/git-quick-stats.git
+git clone https://github.com/arzzen/curltime.git
+git clone https://github.com/arzzen/pert
+git clone https://github.com/arzzen/calc.git
+git clone https://github.com/thespation/dpux_bspwm.git
+
+# Clone and install dotfiles
+git clone git@github.com:Ghost1nTh3SSH/dotfiles.git
+cd dotfiles
+./installer.sh
+
+# Remove zsh and its directories
+sudo apt-get -y purge --no-install-recommends zsh*
+rm -rf ~/.zsh
